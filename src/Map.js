@@ -29,10 +29,10 @@ export const Map = compose(
 
             <Marker
               position={{ lat: loc.location.lat, lng: loc.location.lng }}
+              icon={ (props.showInfoIndex === index ) ? props.markerIcon : props.defaultIcon}
               key={loc.location.lat}
-              style={{backgroundColor: 'yellow', color: "blue"}}
-              id="marker"
-              onClick={ ()=>{ props.showInfo(index)} }>
+              className="marker"
+              onClick={ (event)=>{ props.showInfo(event, { lat: loc.location.lat, lng: loc.location.lng }, index)} }>
 
               { (props.showInfoIndex === index ) && <InfoWindow
                     onCloseClick={props.onToggleOpen}
