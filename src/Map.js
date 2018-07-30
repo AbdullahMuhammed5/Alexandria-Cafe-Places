@@ -1,5 +1,5 @@
 import React from 'react';
-import { compose, withProps, withStateHandlers } from "recompose"
+import { compose, withProps, withStateHandlers, lifecycle } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 
 
@@ -17,6 +17,12 @@ export const Map = compose(
             isOpen: !isOpen,
         }),
   }),
+  lifecycle({
+        componentDidCatch(error, info) {
+            console.log(error)
+            alert("Error while trying to render google maps API, Please check your credentials")
+        }
+      }),
   withScriptjs,
   withGoogleMap
 )((props) =>
@@ -38,12 +44,12 @@ export const Map = compose(
                     onCloseClick={props.onToggleOpen}
                   >
                     <div style={{ opacity: 0.75, padding: `12px` }}>
-                      <div style={{ fontSize: `16px` }}>
+                      <div style={{ fontSize: `16px` }} tabIndex="0">
                         <strong>{loc.name}</strong>
-                             <p>{loc.location.city}</p>
-                             <p>{loc.location.address}</p>
-                             <p>{loc.location.country}</p>
-                        <a href={ "https://www.google.com/maps/?q=" + loc.location.lat + "," + loc.location.lng }>View in google maps</a> 
+                             <div tabIndex="0">{loc.location.city}</div>
+                             <div tabIndex="0">{loc.location.address}</div>
+                             <div tabIndex="0">{loc.location.country}</div>
+                        <a href={ "https://www.google.com/maps/?q=" + loc.location.lat + "," + loc.location.lng } tabIndex="0">View in google maps</a> 
                       </div>
                     </div>
                     

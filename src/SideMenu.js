@@ -33,9 +33,8 @@ class SideMenu extends Component {
                     {this.props.filteredLocations.map((loc, index) => (
                         <li className="item" 
                             tabIndex={tabindex} 
-                            role="none" 
                             key={loc.id}>
-                            <a className="cafe-link" href="#" role ="menuitem"
+                            <a className="cafe-link" href="#" role ="button"
                             onClick={ (event) => {this.props.onLocationsClicked(event, { lat: loc.location.lat, lng: loc.location.lng }, index) }}>{loc.name}</a></li>
                     ))}
                 </ul>

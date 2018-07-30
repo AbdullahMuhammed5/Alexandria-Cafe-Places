@@ -24,7 +24,7 @@ class App extends Component {
 
      LocationsAPI.getAll().then((locations) => {
         this.setState({locations})
-        console.log(locations)
+        // console.log(locations)
       }).catch(() => {
         alert('Failed while fetching api request, it maybe hppened when you have error in your connection or you have wrong api key, please check them.');
         console.log(
