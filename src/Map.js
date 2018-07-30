@@ -18,7 +18,7 @@ export const Map = compose(
         }),
   }),
   lifecycle({
-        componentDidCatch(error, info) {
+        componentDidCatch(error) {
             console.log(error)
             alert("Error while trying to render google maps API, Please check your credentials")
         }
