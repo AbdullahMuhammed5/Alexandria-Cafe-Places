@@ -13,7 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
-- [Usage for users](#Usage for users)
+- [Usage for users](#usage-for-users)
 - [Deployment](#deployment)
 
 ## Folder Structure
